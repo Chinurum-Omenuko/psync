@@ -10,7 +10,7 @@ import RequestCard from "$lib/home/RequestCard.svelte";
 	<!-- <div class=" "> -->
 	<!-- Main Content Section -->
 	<div class="flex flex-col rounded-lg bg-[#00703C] p-6 lg:col-span-4">
-		<h1 class="mb-4 text-2xl font-bold text-white md:text-3xl">Welcome Home, John</h1>
+		<h1 class="mb-4 text-2xl font-bold text-white md:text-3xl">Welcome Home</h1>
 
 		<!-- What's New & Profile Grid -->
 		<div class="flex flex-row gap-4">

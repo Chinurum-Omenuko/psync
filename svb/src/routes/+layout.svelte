@@ -20,13 +20,6 @@
     
 </script>
 
-<main>
-    {#if $authStore.user}
-        <p>Welcome {$authStore.user.displayName}, you are logged in as a {$authStore.role}.</p>
-    {:else}
-        <p>Please log in.</p>
-    {/if}
-</main>
 
 {#if $ModalContext.signIn}
     <SignInModal />

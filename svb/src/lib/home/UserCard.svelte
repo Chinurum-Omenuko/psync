@@ -1,9 +1,7 @@
 <div class="max-w-sm rounded-lg border border-gray-200 shadow-lg bg-white">
     <div class="flex p-4 space-x-4">
         <!-- Profile Picture -->
-        <div class="w-20 h-20 rounded-full overflow-hidden">
-            <img class="w-full h-full object-cover" src="https://via.placeholder.com/100" alt="User Photo">
-        </div>
+    
 
         <!-- User Info -->
         <div class="flex flex-col justify-center space-y-2">

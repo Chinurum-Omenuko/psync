@@ -8,7 +8,7 @@
     </div>
     <div class="space-y-5">
         <AddNewProject />
-        <AddNewProject />
+        
        
 
     </div>

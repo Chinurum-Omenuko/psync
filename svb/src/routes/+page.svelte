@@ -12,8 +12,8 @@
 
 
 <HeroSection toggleSUModal={toggleSignUpModal} />
-<button onclick={goto("/login")}>Login</button>
-<button onclick={authHandlers.loginWithGoogle}><a href="">sign in with google</a></button>
+<!-- <button onclick={goto("/login")}>Login</button> -->
+<!-- <button onclick={authHandlers.loginWithGoogle}><a href="">sign in with google</a></button> -->
 <button onclick={authHandlers.logout}>Log out</button>
 
 
