@@ -12,6 +12,7 @@
     export let isOpen: boolean = false;
     export let closeModal: () => void;
     export let expressInterest: (projectId: string) => void;
+    export let isAdmin: boolean = false;
 
     function formatDate(timestamp: string) {
         return new Date(timestamp).toLocaleString('en-US', {
@@ -31,7 +32,7 @@
     <div
         class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
         aria-hidden="true"
-        on:click={closeModal}>
+        onclick={closeModal}>
     </div>
 
     <!-- Modal container -->
@@ -42,7 +43,7 @@
             >
                 <!-- Close button -->
                 <button
-                    on:click={closeModal}
+                    onclick={closeModal}
                     type="button"
                     class="absolute top-4 right-4 flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
                 >
@@ -78,10 +79,10 @@
                     
                     <!-- Express Interest Button -->
                     <button 
-                        on:click={() => expressInterest(project.projectName)}
+                        onclick={expressInterest}
                         class="mt-6 rounded bg-[#EAC117] px-4 py-2 text-white hover:bg-[#D1A816]"
                     >
-                        Express Interest
+                        {isAdmin ? 'Accept Registration' : 'Express Interest'}
                     </button>
                 </div>
             </div>
