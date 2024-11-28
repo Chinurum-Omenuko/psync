@@ -6,6 +6,9 @@
     export let staffName: string = "Sarah Chen";
     export let timeline: string = "3 months";
     export let status: "matched" | "pending" | "completed" = "matched";
+    import { getContext } from 'svelte';
+
+
     
 
     interface Project {

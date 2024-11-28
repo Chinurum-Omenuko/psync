@@ -2,17 +2,16 @@
 	import CourseModal from '$lib/Modals/CourseModal.svelte';
 	import mockCourses from './mockCourses';
 	import mockRequestCourses from './mockRequestCourses';
+	import { getContext } from 'svelte';
 
-	const { data } = $props();
+    const authContext = getContext('auth');
+    const { user, role } = authContext;
 
-	console.log('courses', data);
-
-	let courses = $state(mockCourses);
-
-	let isAdmin = $state(data?.claims?.role === 'org:admin' || false);
-	let showModal = $state(false);
-	let course = $state({});
-	let selectedRequestList = $state('register');
+    let isAdmin = $state(role === 'admin' || false);
+    let showModal = $state(false);
+    let course = $state({});
+    let selectedRequestList = $state('register');
+    let courses = $state(mockCourses);
 
 	function sendCourseForm() {
 		showModal = true;

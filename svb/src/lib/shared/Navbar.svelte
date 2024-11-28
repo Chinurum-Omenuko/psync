@@ -10,9 +10,9 @@
 
 
 
-	let isAdmin = $state(role === 'admin' || false);
+	let isAdmin = $state(role === 'admin');
 	console.log(isAdmin)
-	console.log({ isAdmin, claims: user?.claims });
+	console.log({ isAdmin });
 	onMount(() => {
 		if (isExternal) {
 			isExternal = true;
