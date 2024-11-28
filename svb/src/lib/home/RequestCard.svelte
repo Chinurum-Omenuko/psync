@@ -1,17 +1,19 @@
 <!-- ClientMatchCard.svelte -->
 <script lang="ts">
-    export let companyName: string = "Tech Solutions Inc";
-    export let courseType: string = "Web Development";
+    export let companyName: string = "Web Projects";
+    export let courseType: string = "Applied Projects";
     export let matchDate: string = "Oct 15, 2024";
     export let staffName: string = "Sarah Chen";
     export let timeline: string = "3 months";
     export let status: "matched" | "pending" | "completed" = "matched";
     
-    const statusStyles = {
-      matched: "bg-green-50 text-green-700 border-green-200",
-      pending: "bg-yellow-50 text-yellow-700 border-yellow-200",
-      completed: "bg-blue-50 text-blue-700 border-blue-200"
-    };
+
+    interface Project {
+        projectName: string;
+        description: string;
+        organizationName: string;
+    }
+
 </script>
   
   <div class="w-64 h-64 rounded-2xl border border-[#ece7cf] bg-[#ece7cf] shadow-sm hover:shadow-md transition-shadow">
@@ -43,9 +45,7 @@
       <div class="space-y-4">
         <div class="flex items-center justify-between">
           <span class="text-sm text-gray-600">{courseType}</span>
-          <span class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold {statusStyles[status]}">
-            {status}
-          </span>
+      
         </div>
   
         <!-- Divider -->
