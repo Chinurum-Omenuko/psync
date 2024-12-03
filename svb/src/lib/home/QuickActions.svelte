@@ -6,17 +6,29 @@
     const authContext = getContext('auth');
     const { role } = authContext;
 </script>
-<div class="col-span-1 rounded-lg bg-[#99ef5e] p-6 h-70 border-gray-200 shadow-lg ">
-    <div class="mb-4">
-        <h3 class="text-center text-lg font-bold text-black">Quick Actions</h3>
+
+
+<div class="rounded-lg p-2 border-gray-200 item-1">
+    <div class="mb-4 mx-2">
+        <h3 class="text-left text-lg font-bold text-white">Quick Actions</h3>
     </div>
-    <div class="space-y-5">
-        <AddNewProject {role} />
+    <div class="flex flex-row w-full justify-start">
+
         
-       
+        <div class="mx-2  w-28 h-28 flex items-center justify-center rounded-lg bg-[#99ef5e]">
+            <AddNewProject {role} />
+        </div>
+        <div class="mx-2  w-28 h-28 flex items-center justify-center rounded-lg bg-[#99ef5e]">
+            <AddNewProject {role} />
+        </div>
+        
+
+
+
 
     </div>
 </div>
+
 
 
 <style>

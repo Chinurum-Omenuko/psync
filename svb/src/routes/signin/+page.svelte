@@ -44,8 +44,6 @@
 
 </script>
 
-<h1>Login</h1>
-
 <!-- <form on:submit|preventDefault={loginUser}>
     <label for="email">Email:</label>
     <input type="email" id="email" bind:value={email} required />

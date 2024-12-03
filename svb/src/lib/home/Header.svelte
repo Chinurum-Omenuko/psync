@@ -17,7 +17,7 @@
 
 		<button onclick={authHandlers.logout} class="bg-yellow-500 text-white px-4 py-2 rounded">Log out</button>
 		<!-- Hamburger Menu for Mobile -->
-		<button class="rounded bg-[#EAC117] px-3 py-1 text-white md:hidden">☰</button>
+		<button class="rounded bg-[#EAC117] px-3 py-1 text-white sm:inline md:hidden">☰</button>
 	</div>
 </header>
 

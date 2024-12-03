@@ -11,25 +11,18 @@
         projectName: string;
         description: string;
         organizationName: string;
-        status: 'requested' | 'registered';
     }
 
     // Modal state
     let showModal = false;
     let selectedProject: Project | null = null; // To hold the project for the modal
-    let selectedRequestList = $state('register');
 
     // Replace with the actual function to fetch projects from your API
     const getProjects = async (): Promise<Project[]> => {
         try {
-            const response = await fetch('/api/projects');
+            const response = await fetch('/api/projects'); // Adjust the URL as needed
             if (response.ok) {
-                const projects = await response.json();
-                // Assuming the API doesn't provide the status, you can set it here
-                return projects.map(project => ({
-                    ...project,
-                    status: project.isRequested ? 'requested' : 'registered'
-                }));
+                return await response.json();
             } else {
                 console.error('Failed to fetch projects');
                 return [];
@@ -62,14 +55,7 @@
         selectedProject = null;
     }
 
-    function handleRequestList(option: 'register' | 'request') {
-        selectedRequestList = option;
-        if (option === 'request') {
-            projectList = projectList.filter(project => project.status === 'requested');
-        } else {
-            projectList = projectList.filter(project => project.status === 'registered');
-        }
-    }
+    
 </script>
 
 <ProjectModal 
@@ -88,29 +74,13 @@
             <hr class="my-8 h-px border-0 bg-gray-200 dark:bg-gray-700" />
         </div>
 
-        <div class="mb-6">
-			{#if isAdmin}
-				<a
-					onclick={() => handleRequestList('register')}
-					class="{selectedRequestList === 'register' ? 'font-bold' : ''} rounded px-6 py-3"
-					>Register</a
-				>
-				<a
-					onclick={() => handleRequestList('request')}
-					class="{selectedRequestList === 'request' ? 'font-bold' : ''} rounded px-6 py-3"
-					>Request</a
-				>
-				<hr class="my-4 h-px border-0 bg-gray-200 dark:bg-green-700" />
-			{/if}
-		</div>
-
 
         <!-- Project List -->
         <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {#each projectList as project}
                 <div
                     class="cursor-pointer rounded-lg bg-white p-6 shadow-md transition-all hover:shadow-lg"
-                    onclick={() => displayProjectModal(project)}
+                    on:click={() => displayProjectModal(project)}
                 >
                     <h2 class="mb-2 text-xl font-semibold text-gray-800">{project.projectName}</h2>
                     <p class="mb-4 text-sm font-medium text-gray-600">{project.organizationName}</p>

@@ -11,7 +11,7 @@
 </script>
 
 
-<div class="max-w-sm rounded-lg border border-gray-200 shadow-lg bg-white">
+<div class="max-w-sm rounded-lg border border-gray-200 shadow-lg bg-white item-3">
     <div class="flex p-4 space-x-4">
         <!-- Profile Picture -->
     
@@ -31,3 +31,15 @@
         <div class="text-xs text-gray-500">Term: 01/01/2025</div>
     </div>
 </div>
+
+
+<style>
+
+    .item-3{
+        grid-column-start: 2;
+        grid-column-end: 3;
+
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+</style>

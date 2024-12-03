@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { modalStore, toggleSignInModal, toggleSignUpModal } from '../context/ModalContext';
+	import { modalStore } from '../context/ModalContext';
 
 	// Remove local state, use the store methods directly
 	function handleClose() {

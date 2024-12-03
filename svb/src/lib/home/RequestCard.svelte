@@ -8,8 +8,9 @@
     export let status: "matched" | "pending" | "completed" = "matched";
     import { getContext } from 'svelte';
 
+    const authContext = getContext('auth');
+    const { role, user } = authContext;
 
-    
 
     interface Project {
         projectName: string;

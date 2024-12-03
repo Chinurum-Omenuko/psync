@@ -1,6 +1,5 @@
 <script lang="ts">
     const logo = '../../static/images/white_logo.svg';
-    const { toggleSIModal } = $props()
     
 </script>
   

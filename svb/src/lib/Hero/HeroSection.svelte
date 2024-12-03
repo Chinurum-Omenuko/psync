@@ -1,10 +1,12 @@
 <script>
-	import { toggleSignInModal } from "$lib/context/ModalContext";
-	import HeroHeader from "$lib/HeroHeader.svelte";
+  import { modalStore } from "$lib/context/ModalContext";
+  import HeroHeader from "$lib/HeroHeader.svelte";
+  import Modal from "$lib/Modals/Modal.svelte";
 
-    const { toggleSUModal } = $props()
+
 </script>
-<HeroHeader toggleSIModal={toggleSignInModal}/>
+<Modal />
+<HeroHeader />
 <div class="container">
     <section class="hero bg-[#00703C] text-center text-white relative overflow-hidden" style="min-height: 78vh;">
         <!-- Hero Content -->
@@ -12,7 +14,10 @@
             <h1 class="text-4xl font-bold mb-4">PartnerSync</h1>
             <p class="text-l mb-6 max-w-xl mx-auto">PartnerSync is a project matching tool that connects Algonquin faculty, students and external partners. It is used to collaborate, submit project requests, and explore partnership opportunities. 
             </p>
-            <button class="get-started-btn bg-[#EAC117] text-white px-6 py-3 rounded" onclick={toggleSUModal}>Get Started</button>
+            <button class="get-started-btn bg-[#EAC117] text-white px-6 py-3 rounded" onclick={() => {
+                $modalStore = true
+                console.log($modalStore)
+                }}>Get Started</button>
         </div>
 
         <!-- Graphic Layer -->

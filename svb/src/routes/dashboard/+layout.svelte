@@ -26,7 +26,8 @@
 <Header />
 <div class="flex h-svh max-h-[700px] w-full">
 	<Navbar user={user} role={role}/>
-	<div class="h-full flex-1 bg-[#00703C] box">
+	
+	<div class="h-full flex-1 bg-[#00703C] box sm:max-w-full max-w-[100vw]">
 		<slot />
 	</div>
 </div>
