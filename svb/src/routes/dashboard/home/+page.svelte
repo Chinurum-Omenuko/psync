@@ -9,7 +9,7 @@ import RequestCard from "$lib/home/RequestCard.svelte";
   const { role, user } = authContext;
 
   const firstname = user.email.slice(0, 3);
-  console.log(firstname)
+  console.log(user)
 
   const isAdmin = role === 'admin';
 </script>

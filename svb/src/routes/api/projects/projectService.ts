@@ -1,7 +1,13 @@
 // src/lib/services/projectService.ts
 import { db } from '$lib/firebase';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
+import { addActivity } from "../../../store/updates";
+import { authStore } from '../../../store/store.svelte';
+import { getContext } from 'svelte';
+import type { User } from 'firebase/auth';
 
+// const authContext = getContext<{ user: User | null; role: string | null }>('auth');
+// const { user, role } = authContext
 
 
 export const createProjectInFirestore = async (projectData) => {
@@ -19,8 +25,12 @@ export const createProjectInFirestore = async (projectData) => {
             projectIdea: projectData.projectIdea,
             organizationInfo: projectData.organizationInfo,
             acknowledge: projectData.acknowledge,
+            status: "pending",
             createdAt: new Date(),
+            userID: projectData.userID,
         });
+
+        await addActivity(projectData.userID, 'projectCreationRequest', new Date());
 
         // Return the created project with its Firestore ID
         return { id: docRef.id, ...projectData };

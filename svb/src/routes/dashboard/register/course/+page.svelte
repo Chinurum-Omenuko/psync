@@ -1,46 +1,73 @@
 <script lang="ts">
 	import InfoModal from '../../../../lib/Modals/InfoModal.svelte';
+	import { authStore } from '../../../../store/store.svelte';
+
+	const auth= $authStore;
 
 	let showModal = false;
-	let formData = {
-    name: '',
-    course: '',
-    term: '',
-    program: '',
-    school: '',
-    skills: '',
-    description: ''
-	};
-	function sendCourseForm() {
-		showModal = true;
-		
-		fetch('/api/courses', {
+	let name: string = '';
+	let code: string = '';
+	let term: string = '';
+	let program: string = '';
+	let school: string = '';
+	let skills: string = '';
+	let description: string = '';
+
+	const submitCourseForm = async (event: Event) => {
+		event.preventDefault();
+
+		// Ensure all required fields are filled
+		if (
+			!name ||
+			!code ||
+			!term ||
+			!program ||
+			!school ||
+			!skills ||
+			!description
+		) {
+			alert("All fields are required.");
+			return;
+		}
+
+		const courseData = {
+			name,
+			code,
+			term,
+			program,
+			school,
+			skills,
+			description,
+			userID: auth.user?.uid,
+		};
+
+		try {
+			// Make the API request to submit the course data (replace with your API route)
+			const response = await fetch('/api/courses', {
 			method: 'POST',
-			body: JSON.stringify(formData),
-			headers: {
-			'Content-Type': 'application/json'
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(courseData),
+			});
+
+			const result = await response.json();
+
+			if (response.ok) {
+			console.log('Course submitted successfully:', result);
+			showModal = true;  // Show modal on successful submission
+			} else {
+			console.error('Error submitting course:', result.error);
+			alert(result.error);
 			}
-		})
-		.then(response => {
-			if (!response.ok) {
-			throw new Error(`HTTP error! status: ${response.status}`);
-			}
-			return response.json();
-		})
-		.then(data => {
-			console.log('Success:', data);
-			// Handle successful response
-		})
-		.catch(error => {
-			console.error('Error:', error.message || error);
-			console.log('fail');
-			// Additional error handling logic
-		});
-	}
+		} catch (error) {
+			console.error('Unexpected error:', error);
+			alert('An unexpected error occurred.');
+		}
+	};
 
 	function closeModal() {
-		showModal = false;
-	}
+    	showModal = false;
+  	}
+
   export let data
   console.log(data.user)
 </script>
@@ -75,7 +102,7 @@
 								type="text"
 								name="name"
 								id="name"
-								bind:value={formData.name}
+								bind:value={name}
 								autocomplete="name"
 								class="w-full border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -90,7 +117,7 @@
 								type="text"
 								name="course"
 								id="course"
-								bind:value={formData.course}
+								bind:value={code}
 								autocomplete="course"
 								class="block flex-auto rounded-md border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -105,7 +132,7 @@
 								type="text"
 								name="term"
 								id="term"
-								bind:value={formData.term}
+								bind:value={term}
 								autocomplete="term"
 								class="block flex-auto rounded-md border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -121,7 +148,7 @@
 								type="text"
 								name="program"
 								id="program"
-								bind:value={formData.program}
+								bind:value={program}
 								autocomplete="program"
 								class="block flex-auto rounded-md border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -136,7 +163,7 @@
 								type="text"
 								name="school"
 								id="school"
-								bind:value={formData.school}
+								bind:value={school}
 								autocomplete="school"
 								class="block flex-auto rounded-md border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -152,7 +179,7 @@
 								type="text"
 								name="skills"
 								id="skills"
-								bind:value={formData.skills}
+								bind:value={skills}
 								autocomplete="skills"
 								class="block flex-auto rounded-md border-0 bg-neutral-100 py-1.5 pl-1 text-gray-900 focus:ring-0 sm:text-sm sm:leading-6"
 							/>
@@ -165,7 +192,7 @@
 							<textarea
 								id="description"
 								name="description"
-								bind:value={formData.description}
+								bind:value={description}
 								rows="3"
 								class="text-black-900 block w-full rounded-md border-0 bg-neutral-100 py-1.5 pl-1 shadow-sm focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
 							></textarea>
@@ -189,7 +216,7 @@
 
 					<div class="col-span-full">
 						<button
-							on:click={sendCourseForm}
+							on:click={submitCourseForm}
 							class="get-started-btn ml-auto flex rounded bg-[#EAC117] px-6 py-3 text-white"
 						>
 							Submit

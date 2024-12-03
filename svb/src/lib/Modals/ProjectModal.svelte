@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { authStore } from "../../store/store.svelte";
+
     export let project: {
         projectName: string;
         organizationName: string;
@@ -11,8 +13,9 @@
     } | null = null;
     export let isOpen: boolean = false;
     export let closeModal: () => void;
-    export let expressInterest: (projectId: string) => void;
     export let isAdmin: boolean = false;
+
+    let auth = $authStore
 
     function formatDate(timestamp: string) {
         return new Date(timestamp).toLocaleString('en-US', {
@@ -24,7 +27,55 @@
             timeZoneName: 'short'
         });
     }
+
+    async function expressInterest() {
+
+        if (!isOpen || !project) {
+            alert("Please open the modal and select a project first.");
+            return;
+        }
+
+        const interestData = {
+            projectId: project.projectName,
+            projectName: project.projectName,
+            organizationName: project.organizationName,
+            projectIdea: project.projectIdea,
+            field: project.field,
+            organizationInfo: project.organizationInfo,
+            skillsNeeded: project.skillsNeeded,
+            startTerm: project.startTerm,
+            createdAt: project.createdAt,
+            expressedBy: auth.user?.uid ?? '',
+            expressedAt: new Date().toISOString(),
+            uid: auth.user?.uid,
+            status: 'project interest'
+        };
+
+        try {
+            // Make the API request to express interest
+            const response = await fetch('/api/interests/project', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(interestData),
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                console.log('Interest expressed successfully:', result);
+                alert('Your interest has been recorded successfully!');
+                closeModal();
+            } else {
+                console.error('Error expressing interest:', result.error);
+                alert(result.error);
+            }
+        } catch (error) {
+            console.error('Unexpected error:', error);
+            alert('An unexpected error occurred while expressing interest.');
+        }
+    }
 </script>
+
 
 {#if isOpen && project}
 <div class="relative z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true">

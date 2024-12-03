@@ -1,6 +1,11 @@
 <script>
+  import { authStore } from "../../store/store.svelte";
+
 	const { isOpen, closeModal, course, sendInterest, isAdmin } = $props();
-	console.log({ isAdmin });
+
+	const auth = $authStore
+
+	console.log(`my current role is ${auth.user.role}`)
 </script>
 
 {#if isOpen}
@@ -41,9 +46,11 @@
 							>Confirm Request</button
 						>
 					{:else}
-						<button onclick={sendInterest} class=" rounded bg-[#EAC117] px-3 py-1 text-white"
-							>I'm interested</button
-						>
+						{#if isAdmin || auth.user?.role !== 'staff'}
+												<button onclick={sendInterest} class=" rounded bg-[#EAC117] px-3 py-1 text-white"
+													>I'm interested</button
+												>
+						{/if}
 					{/if}
 				</div>
 			</div>

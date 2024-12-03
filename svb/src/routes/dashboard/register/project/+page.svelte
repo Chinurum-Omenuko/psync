@@ -1,6 +1,10 @@
 <script lang="ts">
   import { goto } from '$app/navigation';
   import InfoModal from '$lib/Modals/InfoModal.svelte';
+  import { getContext } from 'svelte';
+  import { authStore } from '../../../../store/store.svelte';
+
+  const auth= $authStore;
 
   // Form variables
   let organizationName: string = '';
@@ -11,6 +15,7 @@
   let projectIdea: string = '';
   let organizationInfo: string = '';
   let acknowledge: boolean = false;
+  let userID: string | undefined =  auth.user?.uid
 
   // Function to handle form submission
   const submitProjectForm = async (event: Event) => {
@@ -31,6 +36,7 @@
           projectIdea,
           organizationInfo,
           acknowledge,
+          userID,
       };
 
       try {

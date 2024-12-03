@@ -12,7 +12,7 @@
     }
 </script>
   
-<div class="actions">
+<div class="actions" style="display: flex; flex-direction: row; justify-content: space-around; align-items: center;">
     <div class="previous-btn">
         <button type="submit" class="bg-[#EAC117] text-white px-4 py-2 rounded" on:click={previousPage}>Back</button>
     </div>
@@ -20,4 +20,3 @@
         <button type="submit" class="bg-[#EAC117] text-white px-4 py-2 rounded" on:click={nextPage}>Next</button>
     </div>
 </div>
-  
