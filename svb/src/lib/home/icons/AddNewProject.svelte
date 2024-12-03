@@ -37,6 +37,7 @@
 
 <div class="flex-col items-center justify-center">
   <button
+    title={buttonText}
     on:click={action}
     class="{size} rounded-full border-2 border-dashed border-white-200
     hover:border-blue-400 flex items-center justify-center

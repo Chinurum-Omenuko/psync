@@ -1,6 +1,7 @@
 <script>
     import { getContext } from 'svelte';
     import AddNewProject from "./icons/AddNewProject.svelte";
+  import SendMail from './icons/SendMail.svelte';
 
     // Get the auth context
     const authContext = getContext('auth');
@@ -19,7 +20,7 @@
             <AddNewProject {role} />
         </div>
         <div class="mx-2  w-28 h-28 flex items-center justify-center rounded-lg bg-[#99ef5e]">
-            <AddNewProject {role} />
+            <SendMail {role} />
         </div>
         
 
