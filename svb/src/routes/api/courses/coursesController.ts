@@ -3,8 +3,8 @@ import { createCourseInFirestore, getAllCourses } from './coursesService';
 export const createCourse = async (projectData) => {
     try {
         // Call service to create project in Firestore
-        const createdCourse = await createCourseInFirestore(projectData);
-        return createdCourse;
+        const createdProject = await createCourseInFirestore(projectData);
+        return createdProject;
     } catch (error) {
         console.error('Error in projectController:', error);
         throw new Error('Error creating project');

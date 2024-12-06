@@ -3,6 +3,7 @@ import { authStore } from "../../../../store/store.svelte.js";
 import { getUserFullName } from "$lib/utils/user.js";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "$lib/firebase.js";
+import { addActivity } from "../../../../store/updates.js";
 
 export async function POST({ request }) {
     const { projectId, projectName, organizationName, projectIdea, field, organizationInfo, skillsNeeded, startTerm, createdAt, uid } = await request.json();
@@ -24,6 +25,8 @@ export async function POST({ request }) {
             createdAt,
             status: 'expressed'
         });
+
+        await addActivity(uid, 'projectInterestRequest', new Date());
 
         return json({ success: true, id: docRef.id }, { status: 201 });
     } catch (error) {

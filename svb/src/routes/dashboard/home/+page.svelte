@@ -24,13 +24,6 @@ import RequestCard from "$lib/home/RequestCard.svelte";
 			{#if role !== 'admin'}
 				<QuickActions />
 			{/if}
-			<!-- What's New Section -->
-			<div class="col-span-1 rounded-lg bg-white p-6 md:col-span-2 lg:col-span-2 md:w-3/4 item-2">
-				<h2 class="mb-4 text-xl font-semibold">What's New</h2>
-				<ul>
-					<p class="text-gray-500">No new activities</p>
-				</ul>
-			</div>
 			<!-- Profile Card -->
 			<UserCard />
 		</div>

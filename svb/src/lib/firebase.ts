@@ -1,19 +1,22 @@
 // Import the functions you need from the SDKs you need
+import { env } from "$env/dynamic/public";
 import { deleteApp, getApps, initializeApp, type FirebaseApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD0Wl6Dr7F7c4Ld1GKMSlQ1vB66WzEuMFg",
-  authDomain: "svbt-d42bc.firebaseapp.com",
-  projectId: "svbt-d42bc",
-  storageBucket: "svbt-d42bc.firebasestorage.app",
-  messagingSenderId: "9021789951",
-  appId: "1:9021789951:web:2f1f4a5d3a519a8e469eca"
+  apiKey: env.PUBLIC_API_KEY,
+  authDomain: env.PUBLIC_AUTH_DOMAIN,
+  projectId: env.PUBLIC_PROJECT_ID,
+  storageBucket: env.PUBLIC_STORAGE_BUCKET,
+  messagingSenderId: env.PUBLIC_MESSAGING_SENDER_ID,
+  appId: env.PUBLIC_APP_ID
 };
 
 // Initialize Firebase
