@@ -2,7 +2,7 @@
   import { goto } from '$app/navigation';
   import { authStore } from '../../store/store.svelte';
 
-  const login_logo = "../../../static/images/image.svg"
+  const login_logo = "/images/image.svg"
 
     let email = '';
     let password = '';

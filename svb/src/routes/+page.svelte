@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { goto } from "$app/navigation";
   import HeroSection from "$lib/Hero/HeroSection.svelte";
   import { authHandlers } from "../store/store.svelte";

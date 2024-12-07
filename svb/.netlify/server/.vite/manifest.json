@@ -1,0 +1,377 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "name": "internal",
+    "src": ".svelte-kit/generated/server/internal.js",
+    "isEntry": true,
+    "imports": [
+      "_internal.js",
+      "_equality.js"
+    ]
+  },
+  "_InfoModal.js": {
+    "file": "chunks/InfoModal.js",
+    "name": "InfoModal",
+    "imports": [
+      "_escaping.js"
+    ]
+  },
+  "_ModalContext.js": {
+    "file": "chunks/ModalContext.js",
+    "name": "ModalContext",
+    "imports": [
+      "_index2.js"
+    ]
+  },
+  "_attributes.js": {
+    "file": "chunks/attributes.js",
+    "name": "attributes",
+    "imports": [
+      "_escaping.js"
+    ]
+  },
+  "_client.js": {
+    "file": "chunks/client.js",
+    "name": "client",
+    "imports": [
+      "_exports.js"
+    ]
+  },
+  "_equality.js": {
+    "file": "chunks/equality.js",
+    "name": "equality"
+  },
+  "_escaping.js": {
+    "file": "chunks/escaping.js",
+    "name": "escaping"
+  },
+  "_exports.js": {
+    "file": "chunks/exports.js",
+    "name": "exports"
+  },
+  "_index.js": {
+    "file": "chunks/index.js",
+    "name": "index"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "name": "index",
+    "imports": [
+      "_utils.js",
+      "_equality.js"
+    ]
+  },
+  "_index3.js": {
+    "file": "chunks/index3.js",
+    "name": "index",
+    "imports": [
+      "_utils.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "name": "internal",
+    "imports": [
+      "_index3.js",
+      "_equality.js",
+      "_utils.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.server.ts"
+    ]
+  },
+  "_store.svelte.js": {
+    "file": "chunks/store.svelte.js",
+    "name": "store.svelte",
+    "imports": [
+      "_client.js",
+      "_equality.js",
+      "_index2.js"
+    ]
+  },
+  "_updates.js": {
+    "file": "chunks/updates.js",
+    "name": "updates",
+    "imports": [
+      "_store.svelte.js"
+    ]
+  },
+  "_utils.js": {
+    "file": "chunks/utils.js",
+    "name": "utils"
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "name": "entries/fallbacks/error.svelte",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/svelte-5/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_client.js",
+      "_escaping.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "name": "index",
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_internal.js",
+      "_index.js",
+      "_exports.js",
+      "_index2.js",
+      "_equality.js"
+    ]
+  },
+  "src/hooks.server.ts": {
+    "file": "chunks/hooks.server.js",
+    "name": "hooks.server",
+    "src": "src/hooks.server.ts",
+    "isDynamicEntry": true
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "name": "entries/pages/_layout.svelte",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_store.svelte.js",
+      "_attributes.js",
+      "_ModalContext.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.CnWwhn9k.css"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "name": "entries/pages/_page.svelte",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_client.js",
+      "_attributes.js",
+      "_index3.js",
+      "_ModalContext.js",
+      "_store.svelte.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.iwSMnLfQ.css"
+    ]
+  },
+  "src/routes/api/activities/+server.ts": {
+    "file": "entries/endpoints/api/activities/_server.ts.js",
+    "name": "entries/endpoints/api/activities/_server.ts",
+    "src": "src/routes/api/activities/+server.ts",
+    "isEntry": true
+  },
+  "src/routes/api/courses/+server.ts": {
+    "file": "entries/endpoints/api/courses/_server.ts.js",
+    "name": "entries/endpoints/api/courses/_server.ts",
+    "src": "src/routes/api/courses/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_store.svelte.js",
+      "_updates.js",
+      "_index.js"
+    ]
+  },
+  "src/routes/api/interests/project/+server.ts": {
+    "file": "entries/endpoints/api/interests/project/_server.ts.js",
+    "name": "entries/endpoints/api/interests/project/_server.ts",
+    "src": "src/routes/api/interests/project/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_store.svelte.js",
+      "_updates.js"
+    ]
+  },
+  "src/routes/api/mail/+server.ts": {
+    "file": "entries/endpoints/api/mail/_server.ts.js",
+    "name": "entries/endpoints/api/mail/_server.ts",
+    "src": "src/routes/api/mail/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/api/projects/+server.ts": {
+    "file": "entries/endpoints/api/projects/_server.ts.js",
+    "name": "entries/endpoints/api/projects/_server.ts",
+    "src": "src/routes/api/projects/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_store.svelte.js",
+      "_updates.js"
+    ]
+  },
+  "src/routes/api/users/+server.ts": {
+    "file": "entries/endpoints/api/users/_server.ts.js",
+    "name": "entries/endpoints/api/users/_server.ts",
+    "src": "src/routes/api/users/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_store.svelte.js",
+      "_client.js"
+    ]
+  },
+  "src/routes/dashboard/+layout.svelte": {
+    "file": "entries/pages/dashboard/_layout.svelte.js",
+    "name": "entries/pages/dashboard/_layout.svelte",
+    "src": "src/routes/dashboard/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_client.js",
+      "_store.svelte.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.D-Hn2RKG.css"
+    ]
+  },
+  "src/routes/dashboard/courses/+page.svelte": {
+    "file": "entries/pages/dashboard/courses/_page.svelte.js",
+    "name": "entries/pages/dashboard/courses/_page.svelte",
+    "src": "src/routes/dashboard/courses/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_store.svelte.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.tn0RQdqM.css"
+    ]
+  },
+  "src/routes/dashboard/home/+page.svelte": {
+    "file": "entries/pages/dashboard/home/_page.svelte.js",
+    "name": "entries/pages/dashboard/home/_page.svelte",
+    "src": "src/routes/dashboard/home/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_escaping.js",
+      "_index3.js",
+      "_utils.js",
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.D_E20mX3.css"
+    ]
+  },
+  "src/routes/dashboard/message/+page.svelte": {
+    "file": "entries/pages/dashboard/message/_page.svelte.js",
+    "name": "entries/pages/dashboard/message/_page.svelte",
+    "src": "src/routes/dashboard/message/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_attributes.js",
+      "_escaping.js",
+      "_InfoModal.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.DDjZuate.css"
+    ]
+  },
+  "src/routes/dashboard/projects/+page.server.ts": {
+    "file": "entries/pages/dashboard/projects/_page.server.ts.js",
+    "name": "entries/pages/dashboard/projects/_page.server.ts",
+    "src": "src/routes/dashboard/projects/+page.server.ts",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/dashboard/projects/+page.svelte": {
+    "file": "entries/pages/dashboard/projects/_page.svelte.js",
+    "name": "entries/pages/dashboard/projects/_page.svelte",
+    "src": "src/routes/dashboard/projects/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_store.svelte.js",
+      "_utils.js",
+      "_escaping.js",
+      "_attributes.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.ftIRbr67.css"
+    ]
+  },
+  "src/routes/dashboard/register/+page.svelte": {
+    "file": "entries/pages/dashboard/register/_page.svelte.js",
+    "name": "entries/pages/dashboard/register/_page.svelte",
+    "src": "src/routes/dashboard/register/+page.svelte",
+    "isEntry": true
+  },
+  "src/routes/dashboard/register/course/+page.svelte": {
+    "file": "entries/pages/dashboard/register/course/_page.svelte.js",
+    "name": "entries/pages/dashboard/register/course/_page.svelte",
+    "src": "src/routes/dashboard/register/course/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_InfoModal.js",
+      "_store.svelte.js",
+      "_attributes.js",
+      "_escaping.js"
+    ]
+  },
+  "src/routes/dashboard/register/project/+page.svelte": {
+    "file": "entries/pages/dashboard/register/project/_page.svelte.js",
+    "name": "entries/pages/dashboard/register/project/_page.svelte",
+    "src": "src/routes/dashboard/register/project/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index3.js",
+      "_client.js",
+      "_InfoModal.js",
+      "_store.svelte.js",
+      "_attributes.js",
+      "_escaping.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.jIzjKH4f.css"
+    ]
+  },
+  "src/routes/main/+page.svelte": {
+    "file": "entries/pages/main/_page.svelte.js",
+    "name": "entries/pages/main/_page.svelte",
+    "src": "src/routes/main/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_store.svelte.js"
+    ]
+  },
+  "src/routes/register/+page.svelte": {
+    "file": "entries/pages/register/_page.svelte.js",
+    "name": "entries/pages/register/_page.svelte",
+    "src": "src/routes/register/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_attributes.js",
+      "_index3.js",
+      "_client.js"
+    ]
+  },
+  "src/routes/signin/+page.svelte": {
+    "file": "entries/pages/signin/_page.svelte.js",
+    "name": "entries/pages/signin/_page.svelte",
+    "src": "src/routes/signin/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_attributes.js",
+      "_index3.js",
+      "_client.js",
+      "_store.svelte.js"
+    ]
+  }
+}

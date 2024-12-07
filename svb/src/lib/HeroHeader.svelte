@@ -1,5 +1,5 @@
 <script lang="ts">
-    const logo = '../../static/images/white_logo.svg';
+    const logo = '/images/white_logo.svg';
     
 </script>
   

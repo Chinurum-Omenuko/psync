@@ -5,6 +5,23 @@ node_modules
 .vercel
 /.svelte-kit
 /build
+/functions
+/.next
+!.next/staticman
+!next/staticman/dist
+!next/staticman/dist/*.{js,map}
+!next/staticman/dist/*.html
+!next/staticman/dist/*.json
+!next/staticman/dist/*.svg
+!next/staticman/dist/*.png
+!next/staticman/dist/*.jpg
+!next/staticman/dist/*.jpeg
+!next/staticman/dist/*.gif
+!next/staticman/dist/*.webp
+!next/staticman/dist/*.ico
+!next/staticman/dist/*.ttf
+!next/staticman/dist/*.woff
+!next/staticman/dist/*.woff2
 
 # OS
 .DS_Store
